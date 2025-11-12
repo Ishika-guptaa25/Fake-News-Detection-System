@@ -31,8 +31,7 @@
 
 ## 🧩 Project Structure  
 
-Here’s how your project is organized:
-<img width="450height="300" alt="image" src="https://github.com/user-attachments/assets/8748fcda-dad1-4b15-913d-ebbdd9cce3e4" />
+<img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/75c5b89b-3696-492b-a1d2-8b61f6148cfa" />
 
 
 ---
