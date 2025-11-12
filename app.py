@@ -13,7 +13,7 @@ st.set_page_config(page_title="Fake News Detector", layout="centered")
 st.title("📰 Fake News Detector")
 st.markdown("""
 Paste the news text or headline below and click **Predict**.
-The model was trained using a PassiveAggressiveClassifier with TF-IDF features.
+The model was trained using a **Logistic Regression** with TF-IDF features on 39,000+ news articles.
 """)
 
 # load model & vectorizer
