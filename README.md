@@ -1,4 +1,4 @@
-<img width="1692" height="759" alt="image" src="https://github.com/user-attachments/assets/efd8a7cb-59ea-4e7a-9aa1-caa5a1a5963a" /><h1 align="center">📰 Fake News Detection System</h1>
+<h1 align="center">📰 Fake News Detection System</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-FC4C02?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
@@ -32,16 +32,8 @@
 ## 🧩 Project Structure  
 
 Here’s how your project is organized:
+<img width="450height="300" alt="image" src="https://github.com/user-attachments/assets/8748fcda-dad1-4b15-913d-ebbdd9cce3e4" />
 
-Fake_News_Detection_Model/
-│
-├── app.py                                  # Streamlit web app (frontend)
-├── Fake_News_Detection_Model.ipynb         # Jupyter notebook for training
-├── model.pkl.gz                            # Trained Logistic Regression model
-├── vectorizer.pkl.gz                       # TF-IDF vectorizer
-├── requirements.txt                        # Dependencies
-├── README.md                               # Project documentation
-└── .gitignore                              # Ignored files/folders
 
 ---
 
@@ -88,7 +80,8 @@ Dataset was balanced using **upsampling** to ensure equal representation and fai
 2️⃣ Click **“Predict”**  
 3️⃣ The app displays whether it’s  
    - 🟥 **Fake News**, or  
-   - 🟩 **Real News**  
+   - 🟩 **Real News**
+
 4️⃣ Shows an approximate **confidence score**
 
 ---
@@ -106,16 +99,16 @@ Dataset was balanced using **upsampling** to ensure equal representation and fai
 
 ## ⚙️ Run Locally (PyCharm / VS Code)
 
-# Clone the repository
+### Clone the repository
 git clone https://github.com/Ishika-guptaa25/Fake-News-Detection-System.git
 
-# Move into the directory
+### Move into the directory
 cd Fake-News-Detection-System
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run the app
+### Run the app
 streamlit run app.py
 🖥️ Then open http://localhost:8501 in your browser.
 
@@ -123,7 +116,11 @@ streamlit run app.py
 
 ## 🖼️ App Screenshots
 
+### TRUE
 <img width="700" height="499" alt="image" src="https://github.com/user-attachments/assets/8f463ff5-a34a-464d-b196-ad0285dfa384" />
+
+### FAKE
+<img width="700" height="499" alt="image" src="https://github.com/user-attachments/assets/00e11f9b-2236-4155-ba49-884f8202b32d" />
 
 ---
 
@@ -143,6 +140,17 @@ Ishika Gupta
 📚 Libraries: Scikit-Learn, Pandas, Streamlit
 
 💡 Inspired by the OpenAI Community and real-world misinformation problems
+
+---
+
+## 📌 Future Improvements
+
+- 🧠 Integrate advanced NLP models like **BERT** or **RoBERTa** for higher accuracy  
+- 🌍 Add support for **multiple languages** (Hindi, English, etc.)  
+- 📊 Implement a **dashboard** to visualize fake vs. real news statistics  
+- ⚡ Optimize model loading speed for deployment  
+- ☁️ Host model on cloud (AWS / Hugging Face) for faster inference  
+- 🔍 Include **real-time fact-checking** via trusted API sources (e.g., Google Fact Check, NewsAPI)
 
 ---
 
