@@ -1,11 +1,12 @@
 # app.py
 import streamlit as st
 import pickle
+import gzip
 import os
 import numpy as np
 
-MODEL_PATH = "model.pkl"
-VECT_PATH = "vectorizer.pkl"
+MODEL_PATH = "model.pkl.gz"
+VECT_PATH = "vectorizer.pkl.gz"
 
 st.set_page_config(page_title="Fake News Detector", layout="centered")
 
@@ -19,12 +20,15 @@ The model was trained using a PassiveAggressiveClassifier with TF-IDF features.
 @st.cache_resource
 def load_model():
     if not os.path.exists(MODEL_PATH) or not os.path.exists(VECT_PATH):
-        st.error("Model or vectorizer not found. Please run the training notebook and save models in the `models/` folder.")
+        st.error(f"Model or vectorizer not found. Looking for: {MODEL_PATH} and {VECT_PATH}")
+        st.info(f"Current files in directory: {os.listdir('.')}")
         return None, None
-    with open(MODEL_PATH, "rb") as f:
+
+    with gzip.open(MODEL_PATH, "rb") as f:  # ✅ Use variable
         model = pickle.load(f)
-    with open(VECT_PATH, "rb") as f:
+    with gzip.open(VECT_PATH, "rb") as f:  # ✅ Use variable
         vectorizer = pickle.load(f)
+
     return model, vectorizer
 
 model, vectorizer = load_model()
@@ -37,10 +41,8 @@ with col1:
         X = vectorizer.transform([text_input])
         pred = model.predict(X)[0]
         pred_proba = None
-        # PassiveAggressiveClassifier doesn't provide predict_proba; we can use decision_function
         try:
             score = model.decision_function(X)[0]
-            # convert to pseudo-probability via logistic sigmoid
             prob = 1 / (1 + np.exp(-abs(score)))
             pred_proba = prob
         except Exception:
@@ -55,7 +57,7 @@ with col1:
 
 with col2:
     if st.button("Clear"):
-        st.experimental_rerun()
+        st.rerun()
 
 st.markdown("---")
 st.markdown("**How to use:** paste the text and click Predict. For best results, paste the full article or headline + short description.")
