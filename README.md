@@ -29,6 +29,13 @@
 
 ---
 
+## ⚠️ **Disclaimer:**  
+- The model does not perform real-time fact-checking.  
+- It predicts based on linguistic patterns learned from the dataset.  
+- Therefore, newly published or sensitive real-world events may be misclassified.
+
+---
+
 ## 🧩 Project Structure  
 
 <img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/75c5b89b-3696-492b-a1d2-8b61f6148cfa" />
